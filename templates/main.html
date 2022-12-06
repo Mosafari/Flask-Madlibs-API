@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                background-color: #634258;
+              }
+            .s1{
+                border-radius: 25px;
+                background: #6d6087;
+                margin: auto;
+
+                background-repeat: repeat;
+
+		    }
+            .s3{
+                border-radius: 25px;
+                background: #9ad1aa;
+                margin: auto;
+                width: 30%;
+                background-repeat: repeat;
+                height: 75px;
+            }
+        </style>
+        <title>Madlibs Game</title>
+    </head>
+    <body>
+        <p style="font-size:350%;text-align:center"><b>API Madlibs</b></p>
+        <br>
+        <br>
+        <div class = 's1'>
+            <h1  style="text-align:center">Today we picked apple from {{val.person}}'s Orchard. I had no idea there were so many different varieties of apples. I ate  {{val.color}}  apples straight off the tree that tested like {{val.foods}}. Then there was a {{val.adjective}} apple that looked like a {{val. thing }}.When our bag were full, we went on a free hay ride to {{val.place}} and back. It ended at a hay pile where we got to {{val.verb}} {{val.adverb}}. I can hardly wait to get home and cook with the apples. We are going to make appple {{val.food}} and {{val.things}} pies!.<h1>
+        </div>
+        <br>
+        <br>
+        <h3  style="text-align:center"><a href={{url_for('main')}}>See Place Holders</a><h3>
+    </body>
+    </body>
+</html>
