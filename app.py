@@ -1,6 +1,8 @@
 # Initiate Flask Project
 
 from flask import Flask, render_template ,request
+import json
+import csv
 
 app = Flask(__name__)
 
@@ -25,8 +27,17 @@ def main():
     
 @app.route("/api", methods = [ 'POST'])
 def apival():
+    # recieve json and replace in html
     if request.method == 'POST':
         dict = request.get_json()
+        # store each api request in csv file
+        print(type(dict))
+        # data = json.load(dict)
+        headers= ["person" ,"color" ,"foods" ,"adjective" ,"thing" ,"place" ,"verb" ,"adverb" ,"food" ,"things"]
+        with open("api-req.csv", "w") as csvfile:
+            writer = csv.DictWriter(csvfile, fieldnames = headers)
+            writer.writeheader()
+            writer.writerows([dict])
         return render_template("main.html", val = dict)
 
 if __name__ == "__main__":
