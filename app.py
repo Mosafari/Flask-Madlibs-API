@@ -34,7 +34,7 @@ def apival():
         print(type(dict))
         # data = json.load(dict)
         headers= ["person" ,"color" ,"foods" ,"adjective" ,"thing" ,"place" ,"verb" ,"adverb" ,"food" ,"things"]
-        with open("api-req.csv", "w") as csvfile:
+        with open("api-req.csv", "a") as csvfile:
             writer = csv.DictWriter(csvfile, fieldnames = headers)
             writer.writeheader()
             writer.writerows([dict])
